@@ -16,6 +16,6 @@ public interface PaymentService {
 
     public int create(Payment payment);
 
-    public Payment getPaymentByid(@Param("id") Long id);
+    public Payment getPaymentById(@Param("id") Long id);
 
 }
