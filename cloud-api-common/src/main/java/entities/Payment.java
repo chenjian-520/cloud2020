@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.entities;
+package entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +22,5 @@ public class Payment implements Serializable {
 
     private Long id;
     private String serial;
-    
+
 }

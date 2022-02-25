@@ -1,8 +1,9 @@
 package com.atguigu.springcloud.controller;
 
-import com.atguigu.springcloud.entities.CommonResult;
-import com.atguigu.springcloud.entities.Payment;
+
 import com.atguigu.springcloud.service.PaymentService;
+import entities.CommonResult;
+import entities.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping(value = "/payment/create")
-    public CommonResult create(@RequestBody Payment payment) {
+    public CommonResult<Payment> create(@RequestBody Payment payment) {
 
         int result = paymentService.create(payment);
         log.info("********插入结果：" + result);
@@ -38,10 +39,10 @@ public class PaymentController {
     }
 
     @GetMapping(value = "/payment/get/{id}")
-    public CommonResult getPaymentById(@PathVariable("id") Long id) {
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
 
         Payment paymentByid = paymentService.getPaymentById(id);
-        log.info("********查询结果：" + paymentByid);
+        log.info("********查询结果****：" + paymentByid);
 
         if (paymentByid != null) {
             return new CommonResult(200, "查询成功", paymentByid);
