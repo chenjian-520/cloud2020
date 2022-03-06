@@ -18,11 +18,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.atguigu.springcloud</groupId>
-            <artifactId>cloud-api-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -46,16 +41,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.atgugu.springcloud</groupId>
+            <groupId>com.atguigu.springcloud</groupId>
             <artifactId>cloud-api-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.atgugu.springcloud</groupId>
-            <artifactId>cloud-api-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 

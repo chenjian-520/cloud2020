@@ -1,13 +1,13 @@
 server:
-  port: 80
+  port: 7001
 
 eureka:
   instance:
     hostname: localhost #本机ip地址，可不配
   client:
     #表示是否注册自身到eureka服务器， 做集群是设置成true 生产配置为true
-    registerWithEureka: true
+    registerWithEureka: false
     #表示是否从eureka服务器获得注册信息，生产配置为true
-    fetchRegistry: true
+    fetchRegistry: false
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
