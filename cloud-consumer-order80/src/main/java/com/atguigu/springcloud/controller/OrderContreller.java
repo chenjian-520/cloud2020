@@ -22,6 +22,7 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderContreller {
 
+    // 通过eureka配置的服务名调用
     public static final String PAYMENT_URL = "http://127.0.0.1:8001";
 
     @Resource
