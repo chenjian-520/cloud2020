@@ -23,7 +23,7 @@ import javax.annotation.Resource;
 public class OrderContreller {
 
     // 通过eureka配置的服务名调用
-    public static final String PAYMENT_URL = "http://127.0.0.1:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Resource
     private RestTemplate restTemplate;

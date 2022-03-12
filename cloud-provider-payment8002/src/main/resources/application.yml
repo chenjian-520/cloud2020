@@ -18,7 +18,8 @@ mybatis:
 
 eureka:
   instance:
-    hostname: localhost #本机ip地址，可不配
+    prefer-ip-address: true   #访问路径可以显示ip
+    instance-id: payment8002
   client:
     #表示是否注册自身到eureka服务器， 做集群是设置成true 生产配置为true
     registerWithEureka: true
