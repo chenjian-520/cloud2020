@@ -3,6 +3,7 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,17 +29,31 @@ public class OrderContreller {
     @Resource
     private RestTemplate restTemplate;
 
-    @PostMapping(value = "/payment/create")
+    @PostMapping(value = "/consumer/payment/create")
     public CommonResult<Payment> create(@RequestBody Payment payment) {
 
         log.info("/consumer/payment/create");
         return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
     }
 
-    @GetMapping(value = "/payment/get/{id}")
+    @GetMapping(value = "/consumer/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
 
         log.info("/consumer/payment/get/{id}");
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
+
+    @GetMapping(value = "/consumer/payment/getForEntity/{id}")
+    public CommonResult<Payment> getPaymentEntityById(@PathVariable("id") Long id) {
+
+        ResponseEntity<CommonResult> forEntity = restTemplate.getForEntity(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
+        log.info("/consumer/payment/getForEntity/{id}");
+        if (forEntity.getStatusCode().is2xxSuccessful()) {
+            log.info(forEntity.getStatusCode() + "\t" + forEntity.getStatusCodeValue());
+            return forEntity.getBody();
+        } else {
+            return new CommonResult<>(444, "操作失败");
+        }
+    }
+
 }
