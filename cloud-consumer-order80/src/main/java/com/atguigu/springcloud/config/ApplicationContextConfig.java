@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationContextConfig {
 
     @Bean
-    @LoadBalanced
+    @LoadBalanced  // 指示被注释的对象RestTemplate应使用RibbonLoadBalancerClient与您的服务进行交互
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
