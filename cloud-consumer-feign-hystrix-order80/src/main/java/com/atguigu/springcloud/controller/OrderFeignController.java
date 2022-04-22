@@ -1,7 +1,5 @@
 package com.atguigu.springcloud.controller;
 
-import com.atguigu.springcloud.entities.CommonResult;
-import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentFeignService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,19 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping
+@RequestMapping("order")
 public class OrderFeignController {
 
     @Resource
     private PaymentFeignService paymentFeignService;
 
-    @GetMapping(value = "/comsumer/feign/payment/get/{id}")
-    public CommonResult<Payment> selectOne(@PathVariable("id") Long id) {
-        return paymentFeignService.getPaymentById(id);
+    @GetMapping(value = "/payment/feign/hystrix/ok/{id}")
+    public String paymentInfo_OK(@PathVariable Integer id) {
+        return paymentFeignService.paymentInfo_OK(id);
     }
 
-    @GetMapping("/comsumer/feign/discovery")
-    public Object getFeignTimeOut() {
-        return paymentFeignService.discoverybak();
+    @GetMapping(value = "/payment/feign/hystrix/timeout/{id}")
+    public String paymentInfo_TimeOut(@PathVariable Integer id) {
+        return paymentFeignService.paymentInfo_TimeOut(id);
     }
 }

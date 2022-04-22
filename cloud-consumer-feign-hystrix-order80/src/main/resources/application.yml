@@ -15,12 +15,8 @@ eureka:
 
 spring:
   application:
-    name: cloud-comsumer-feign-order
+    name: cloud-comsumer-feign-hystrix-order
 
-#设置feign客户端超时时间
-ribbon:
-  ReadTimeout: 50000
-  ConnectTimeout: 50000
-logging:
-  level:
-    com.atguigu.springcloud.service.PaymentFeignService: debug
+feign:
+  hystrix:
+    enabled: true  #在feign中开启hystrix

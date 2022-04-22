@@ -18,9 +18,9 @@ public interface PaymentFeignService {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("payment/selectOne/{id}")
-    CommonResult<Payment> selectOne(@PathVariable("id") Long id);
+    @GetMapping("/payment/get/{id}")
+    CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
 
-    @GetMapping("payment/feign/timeout")
-    String getFeignTimeOut();
+    @GetMapping("/payment/discovery")
+    Object discoverybak();
 }

@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.openfeign.FeignClient;
 
 /**
  * @author cj
@@ -11,15 +12,15 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
  * @JdkVersion JDK1.8
  * @ClassName
  * @Version 1.0.0
- * @date 2022/4/2210:15
+ * @date 2022/4/2215:28
  * @Description:
  */
-
 @SpringBootApplication
 @EnableEurekaClient
 @EnableHystrix
-public class PaymentHystrixMain8001 {
+@FeignClient
+public class OrderHystrixMain80 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentHystrixMain8001.class, args);
+        SpringApplication.run(OrderHystrixMain80.class, args);
     }
 }
