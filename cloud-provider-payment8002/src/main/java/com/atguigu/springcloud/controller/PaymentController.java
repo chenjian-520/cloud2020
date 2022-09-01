@@ -4,6 +4,9 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @Slf4j
+@Api(tags = "支付生产接口")
 public class PaymentController {
 
     @Autowired
@@ -29,7 +33,8 @@ public class PaymentController {
     private String serverPort;
 
     @PostMapping(value = "/payment/create")
-    public CommonResult<Payment> create(@RequestBody Payment payment) {
+    @ApiOperation(value = "create接口")
+    public CommonResult create(@ApiParam(required = true, name = "Payment", value = "查询条件") @RequestBody Payment payment) {
 
         int result = paymentService.create(payment);
         log.info("********插入结果：:serverPort->" + serverPort + result);
@@ -39,7 +44,6 @@ public class PaymentController {
         } else {
             return new CommonResult(500, "插入数据库失败:serverPort->" + serverPort, null);
         }
-
     }
 
     @GetMapping(value = "/payment/get/{id}")
@@ -53,7 +57,6 @@ public class PaymentController {
         } else {
             return new CommonResult(500, "查询失败:serverPort->" + serverPort, null);
         }
-
     }
 
     @GetMapping(value = "/payment/lb")

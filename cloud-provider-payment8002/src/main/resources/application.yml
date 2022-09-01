@@ -10,6 +10,13 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/db2020_cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
+  #  这个mvc的配置是springboot2.6.1不支持swagger3的折衷配置，后面考虑升级Springboot版本或降级版本
+  #  如果你使用的是 Springboot 2.6 版本，需要配置，否则报下面的错   Springboot 3.0 和 Springboot 2.5.8 不需要配置
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matche
+
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
@@ -28,3 +35,4 @@ eureka:
     service-url:
       #      defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
