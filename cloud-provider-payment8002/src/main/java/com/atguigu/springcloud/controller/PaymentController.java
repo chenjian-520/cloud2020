@@ -34,7 +34,7 @@ public class PaymentController {
 
     @PostMapping(value = "/payment/create")
     @ApiOperation(value = "create接口")
-    public CommonResult create(@ApiParam(required = true, name = "Payment", value = "查询条件") @RequestBody Payment payment) {
+    public CommonResult create(@ApiParam(value = "Payment", required = true, example = "") @RequestBody Payment payment) {
 
         int result = paymentService.create(payment);
         log.info("********插入结果：:serverPort->" + serverPort + result);

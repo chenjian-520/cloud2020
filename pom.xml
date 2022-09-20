@@ -23,7 +23,8 @@
         <module>cloud-gateway-gateway9527</module>
         <module>cloud-seata-account-5001</module>
         <module>cloud-seata-order-5002</module>
-        <module>cloud-seata-com.cj.product-5003</module>
+        <module>cloud-seata-product-5003</module>
+        <module>maven-project-GuiToolRemake</module>
     </modules>
     <packaging>pom</packaging>
 
