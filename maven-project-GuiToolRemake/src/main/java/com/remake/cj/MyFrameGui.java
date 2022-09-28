@@ -42,7 +42,7 @@ public class MyFrameGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //监听弹窗
-                ReName.recursiveTraversalFolder("E:\\视频个人文件夹\\视频素材\\05-鬼畜视频制作\\鬼畜素材", "鬼畜", "s1e6", "");
+                ReName.recursiveTraversalFolder("E:\\视频个人文件夹\\视频素材\\05-鬼畜视频制作\\鬼畜素材", "鬼畜", "s1e6", "",false);
             }
         });
         container.add(button);      //将按钮放进容器中
