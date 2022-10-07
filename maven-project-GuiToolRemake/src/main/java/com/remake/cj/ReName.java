@@ -17,8 +17,8 @@ import java.util.regex.Pattern;
 public class ReName {
 
     public static void main(String[] args) {
-        recursiveTraversalFolder("E:\\视频个人文件夹\\毒毒动漫素材\\间谍过家家灬公z号毒毒剪辑丶拥有千G素材哦等多个文件", "间谍过家家", " ", "-", false);
-//        recursiveTraversalFolder2("E:\\视频个人文件夹\\毒毒动漫素材\\散华礼弥\\散华礼弥片段", "散华礼弥-补帧素材"," ", "-",false);
+//        recursiveTraversalFolder("E:\\视频个人文件夹\\毒毒动漫素材\\间谍过家家灬公z号毒毒剪辑丶拥有千G素材哦等多个文件", "间谍过家家", " ", "-", false);
+        recursiveTraversalFolder2("E:\\视频个人文件夹\\毒毒动漫素材\\全职猎人\\比司吉·酷露佳4-全职猎人片段", "全职猎人","-全职猎人片段", "-",true);
     }
 
     /**
@@ -153,6 +153,8 @@ public class ReName {
             System.out.println("文件不存在!");
         }
     }
+
+
 
 
 }
