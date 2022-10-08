@@ -1,7 +1,5 @@
 package com.remake.cj;
 
-import org.codehaus.plexus.util.StringUtils;
-
 import java.io.File;
 import java.util.regex.Pattern;
 
@@ -17,8 +15,8 @@ import java.util.regex.Pattern;
 public class ReName {
 
     public static void main(String[] args) {
-//        recursiveTraversalFolder("E:\\视频个人文件夹\\毒毒动漫素材\\间谍过家家灬公z号毒毒剪辑丶拥有千G素材哦等多个文件", "间谍过家家", " ", "-", false);
-        recursiveTraversalFolder2("E:\\视频个人文件夹\\毒毒动漫素材\\全职猎人\\比司吉·酷露佳4-全职猎人片段", "全职猎人","-全职猎人片段", "-",true);
+//        recursiveTraversalFolder("F:\\视频个人文件夹\\毒毒动漫素材\\言叶之庭\\言叶之庭", "言叶之庭", "-Koto-no-ha-no-niwa", "", false);
+        recursiveTraversalFolder2("F:\\视频个人文件夹\\毒毒动漫素材\\刺客五六七第三季", "刺客五六七第三季", " ", "-", false);
     }
 
     /**
@@ -63,7 +61,7 @@ public class ReName {
                             String regex = "([1-9]\\d*\\.?\\d*)|(0\\.\\d*[1-9])";
                             //编译正则表达式
                             Pattern pattern = Pattern.compile(regex);
-                            if(split[1] != null && pattern.matcher(split[1]).matches()){
+                            if (split[1] != null && pattern.matcher(split[1]).matches()) {
                                 name1 = split[0];
                             }
                         }
@@ -95,7 +93,7 @@ public class ReName {
 
     private static Integer indexStatus = 0;
 
-    public static void recursiveTraversalFolder2(String path, String name,String tihuan, String newString, Boolean flag) {
+    public static void recursiveTraversalFolder2(String path, String name, String tihuan, String newString, Boolean flag) {
         File folder = new File(path);
         if (folder.exists()) {
             File[] fileArr = folder.listFiles();
@@ -129,22 +127,16 @@ public class ReName {
                         name1 = name1.replace("---", "-");
 
                         // 修改文件为新名字
-                        if (!fileName.contains(name)) {
-                            parentPath = file.getParentFile();
-                            String name3 = file.getParentFile().getName();
-                            if(flag){
-                                newDir = new File(parentPath + "/" + name3.concat("-").concat(name).concat(String.valueOf(indexStatus++)).concat(name2));
-                            }else {
-                                newDir = new File(parentPath + "/" + name.concat("-").concat(String.valueOf(indexStatus++)).concat(name2));
-                            }
-                            file.renameTo(newDir);
-                            System.out.println("修改后：" + newDir);
+                        parentPath = file.getParentFile();
+                        String name3 = file.getParentFile().getName();
+                        if (flag) {
+                            newDir = new File(parentPath + "/" + name3.concat("-").concat(name).concat(String.valueOf(indexStatus++)).concat(name2));
                         } else {
-                            parentPath = file.getParentFile();
-                            newDir = new File(parentPath + "/" + name1.concat(name2));
-                            file.renameTo(newDir);
-                            System.out.println("修改后：" + newDir);
+                            newDir = new File(parentPath + "/" + name.concat("-").concat(String.valueOf(indexStatus++)).concat(name2));
                         }
+                        file.renameTo(newDir);
+                        System.out.println("修改后：" + newDir);
+
 
                     }
                 }
@@ -153,8 +145,6 @@ public class ReName {
             System.out.println("文件不存在!");
         }
     }
-
-
 
 
 }
