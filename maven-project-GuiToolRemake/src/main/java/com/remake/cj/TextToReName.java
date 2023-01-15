@@ -13,7 +13,7 @@ import java.util.List;
 public class TextToReName {
 
     public static void main(String[] args) throws IOException {
-        recursiveTraversalFolder("F:\\视频个人文件夹\\毒毒动漫素材\\刺客五六七第三季", "F:\\视频个人文件夹\\原片素材\\2021_10_新番\\名字.txt", "刺客五六七第三季", "，", "-");
+        recursiveTraversalFolder("F:\\视频个人文件夹\\原片素材\\死神千年血战篇\\10", "F:\\视频个人文件夹\\原片素材\\名字.txt", "死神千年血战篇", "，", "-");
     }
 
     /**
@@ -23,7 +23,7 @@ public class TextToReName {
      * @param pathFile 命名文件路径（文件内容文件名逗号隔开）
      * @param name     需要再原文件最后加的名字
      * @param split1   文件内容分隔符
-     * @param split1   文件名分隔符
+     * @param split2   文件名分隔符
      */
     public static void recursiveTraversalFolder(String path, String pathFile, String name, String split1, String split2) throws IOException {
         File folder = new File(path);

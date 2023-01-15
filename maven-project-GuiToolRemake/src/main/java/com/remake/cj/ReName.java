@@ -15,8 +15,8 @@ import java.util.regex.Pattern;
 public class ReName {
 
     public static void main(String[] args) {
-//        recursiveTraversalFolder("F:\\视频个人文件夹\\毒毒动漫素材\\言叶之庭\\言叶之庭", "言叶之庭", "-Koto-no-ha-no-niwa", "", false);
-        recursiveTraversalFolder2("F:\\视频个人文件夹\\毒毒动漫素材\\刺客五六七第三季", "刺客五六七第三季", " ", "-", false);
+        recursiveTraversalFolder("F:\\视频个人文件夹\\毒毒动漫素材\\2023_01_D新动漫\\2022.12\\转生成为魔剑等多个文件\\孤独摇滚", "孤独摇滚", " ", "-", false);
+//        recursiveTraversalFolder2("F:\\视频个人文件夹\\毒毒动漫素材\\1_上传过B站素材\\【火影忍者】资源全库\\火影忍者疾风传 OP11", "名场面", " ", "-", true);
     }
 
     /**
