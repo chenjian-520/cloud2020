@@ -18,7 +18,7 @@
 <!-- 比较好的开源项目卡片 -->
 <div align="center">
 <a href="https://github.com/chenjian-520/cloud2020">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=dreamOfDay&repo=easy-starters&theme=dark&bg_color=0d1117&hide_border=true" /></a>
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=chenjian-520&repo=cloud2020&theme=dark&bg_color=0d1117&hide_border=true" /></a>
 </div>
 
 💪 正在学习: 
